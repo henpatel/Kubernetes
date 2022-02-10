@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hp-tenants
+  name: hp-nginx-deployment
   labels:
-    app: tenants
+    app: nginx
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: tenants
+      app: nginx
   template:
     metadata:
       labels:
-        app: tenants
+        app: nginx
     spec:
       containers:
-      - name: tenants
-        image: "gbl-devlnx1.meridianksi.net:32443/meridian.tenants.web.api:1.1.0-dev.17975_22040.1"
-        imagePullPolicy: IfNotPresent
+      - name: nginx
+        image: nginx:1.14.2
         ports:
         - containerPort: 80
         resources:
