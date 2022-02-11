@@ -20,8 +20,9 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
-        environment:
-        - CONNECTION_STRING: "User ID = postgres; Password = password; Host = postgres01; Port = 5432; Database = Tenants; Pooling = true;"
+        env:
+        - name: CONNECTION_STRING
+          value: "User ID = postgres; Password = password; Host = localhost; Port = 30537; Database = Tenants; Pooling = true;"
         resources:
           requests:
             memory: "64Mi"
