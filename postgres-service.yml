@@ -9,6 +9,9 @@ spec:
   selector:
     app: postgres
   ports:
-    - port: 5432
+    - protocol: TCP
+      port: 5432 #Cluster IP Level
+      targetPort: 5432
+      nodePort: 30537  #External Port
 
   
