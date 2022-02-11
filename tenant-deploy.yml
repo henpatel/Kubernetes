@@ -22,7 +22,7 @@ spec:
         - containerPort: 80
         env:
         - name: CONNECTION_STRING
-          value: "User ID = postgres; Password = password; Host = 10.103.16.84; Port = 5432; Database = Tenants; Pooling = true;"
+          value: "User ID = postgres; Password = password; Host = postgres-service; Port = 5432; Database = Tenants; Pooling = true;"
         resources:
           requests:
             memory: "64Mi"
