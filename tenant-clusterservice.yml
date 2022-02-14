@@ -9,5 +9,5 @@ spec:
     app: tenants
   ports:
     - protocol: TCP
-      port: 8085 # this is the port for other in the cluster to talk to me
+      port: 8084 # this is the port for other in the cluster to talk to me
       targetPort: 80 # this is the port from the deployment and what the pods are exposed on

@@ -10,7 +10,7 @@ spec:
     app: nginx
   ports:
     - protocol: TCP
-      port: 8083 #Cluster IP Level
+      port: 8086 #Cluster IP Level
       targetPort: 80
-      nodePort: 31000  #External Port
+      nodePort: 31001  #External Port
   

@@ -3,14 +3,27 @@ kind: Ingress
 metadata:
   name: tenant-ingress
 spec:
+  ingressClassName: nginx
+  defaultBackend:
+    service:
+      name: tenant-service-clusterip
+      port:
+        number: 8084
   rules:
   - host: foo.bar.com # add this entry to your host file - 127.0.0.1 foo.bar.com
     http:
       paths:
-        - path: /
+        - path: /bar
           pathType: Prefix
           backend:
             service:
-             name: tenant-service-clusterip # this is name of the service
+             name: tenant-service # this is name of the service
              port:
-                number: 8085 # this is the service's cluster port exposed to be talked to a lot
+                number: 8083 # this is the service's cluster port exposed to be talked to a lot
+        - path: /foos
+          pathType: Prefix
+          backend:
+            service:
+             name: nginx-service # this is name of the service
+             port:
+                number: 8086 # this is the service's cluster port exposed to be talked to a lot
