@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tenant-service-clusterip
+  labels:
+    app: tenants  
+spec:
+  type: ClusterIP
+  selector:
+    app: tenants
+  ports:
+    - protocol: TCP
+      port: 8084 #Cluster IP Level
+      targetPort: 80
