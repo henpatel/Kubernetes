@@ -5,10 +5,9 @@ metadata:
   labels:
     app: tenants  
 spec:
-  type: ClusterIP
   selector:
     app: tenants
   ports:
     - protocol: TCP
-      port: 8084 #Cluster IP Level
-      targetPort: 80
+      port: 8085 # this is the port for other in the cluster to talk to me
+      targetPort: 80 # this is the port from the deployment and what the pods are exposed on
