@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tenant-deploy
+  labels:
+    app: tenants
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tenants
+  template:
+    metadata:
+      labels:
+        app: tenants
+    spec:
+      containers:
+      - name: tenants
+        image: "gbl-devlnx1.meridianksi.net:32443/meridian.tenants.web.api:1.1.0-dev.17975_22040.1"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        env:
+        - name: CONNECTION_STRING
+          value: "User ID = postgres; Password = password; Host = postgres-service; Port = 5432; Database = Tenants; Pooling = true;"
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

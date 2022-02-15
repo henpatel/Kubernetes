@@ -1,0 +1,8 @@
+apiVersion: v2 #Helm API Version
+name: chart-tenants
+description: A helm chart for Kubernetes - Tenant Application
+keywords:
+  - "tenants"
+type: application
+appVersion: 1.0.0 # Version of the Application
+version: 1.0.0 # Version of the chart
