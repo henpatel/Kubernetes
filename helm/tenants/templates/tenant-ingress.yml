@@ -13,7 +13,7 @@ spec:
   - host: app.tenants.com # add this entry to your host file - 127.0.0.1 www.tenants.com
     http:
       paths:
-        - path: "/"
+        - path: "/tenants"
           pathType: Prefix
           backend:
             service:
