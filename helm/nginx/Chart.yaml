@@ -1,0 +1,8 @@
+apiVersion: v2 #Helm API Version
+name: nginx-chart
+description: A helm chart for Kubernetes - Nginx Application
+keywords:
+  - "test"
+type: application
+appVersion: 1.0.0 # Version of the Application
+version: 1.0.0 # Version of the chart

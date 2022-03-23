@@ -13,10 +13,14 @@ spec:
     metadata:
       labels:
         app: tenants
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "meridian-tenants"
+        dapr.io/app-port: "80"
     spec:
       containers:
       - name: tenants
-        image: "gbl-devlnx1.meridianksi.net:32443/meridian.tenants.web.api:1.1.0-dev.17975_22040.1"
+        image: "gbl-devlnx2.meridianksi.net:32443/meridian.tenants.web.api:1.1.0-dev.18357_22074.1"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
